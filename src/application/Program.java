@@ -1,5 +1,7 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -55,14 +57,13 @@ public class Program {
 	}
 
 	private static void showReport(Department dep) {
-		int n=dep.getEmployees().size();
-		
 		System.out.println("FOLHA DE PAGAMENTO:");
 		System.out.println("Departamento de vendas: "+dep.payroll());
 		System.out.println("Pagamento realizado no dia "+dep.getPayDay());
 		System.out.println("Funcionarios");
-		for(int i=0;i<n;i++)
-			System.out.println(dep.getEmployees().get(i).getName());
+		for(Employee e:dep.getEmployees())
+			System.out.println(e.getName());
+		
 		System.out.print("Para dúvidas favor entrar em contato: "+dep.getAddress().getEmail());
 	}
 
